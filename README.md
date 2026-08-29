@@ -1,10 +1,6 @@
-# Mamba-DR
 
-<p align="center">
-  <img src="mamba-dr-logo.png" alt="Mamba-DR mascot logo: a friendly green mamba with a retinal lens" width="190">
-</p>
 
-## Mamba-DR: A Clinically Grounded Mamba-Vision Concept Bottleneck for Interpretable and Correctable Diabetic Retinopathy Grading
+# Mamba-DR: A Clinically Grounded Mamba-Vision Concept Bottleneck for Interpretable and Correctable Diabetic Retinopathy Grading
 
 > **Work in progress.** The first version of our manuscript was submitted on **29 August 2026**. This repository is being prepared alongside the submission; code, instructions, and checkpoints may therefore change.
 
