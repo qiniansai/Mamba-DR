@@ -1,7 +1,7 @@
 # Mamba-DR
 
 <p align="center">
-  <img src="figures/mamba-dr-logo.png" alt="Mamba-DR mascot logo: a friendly green mamba with a retinal lens" width="190">
+  <img src="mamba-dr-logo.png" alt="Mamba-DR mascot logo: a friendly green mamba with a retinal lens" width="190">
 </p>
 
 ## Mamba-DR: A Clinically Grounded Mamba-Vision Concept Bottleneck for Interpretable and Correctable Diabetic Retinopathy Grading
@@ -11,7 +11,7 @@
 Mamba-DR is a clinically grounded concept-bottleneck framework for five-level diabetic retinopathy (DR) grading. It combines a hybrid MambaVision encoder with named lesion concepts—hard exudates (EX), hemorrhages (HE), microaneurysms (MA), and soft exudates (SE)—to provide interpretable lesion evidence and support targeted concept review and re-grading.
 
 <p align="center">
-  <img src="figures/main_figure.png" alt="Overview of the Mamba-DR architecture and concept-review intervention pipeline" width="100%">
+  <img src="main_figure.png" alt="Overview of the Mamba-DR architecture and concept-review intervention pipeline" width="100%">
 </p>
 
 ## Highlights
