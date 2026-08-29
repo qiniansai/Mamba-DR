@@ -1,0 +1,64 @@
+seed_everything: 42
+
+model:
+  class_path: model.model.Model
+  init_args:
+    arch_name: mambavision_tiny_concept
+    pretrained: true
+    disease_loss_weight: 1.0
+    lesion_loss_weight: 0.9
+    KG_loss_weight: 0.1
+    with_EK: true
+    kg_loss_base_weight: 1.0
+    use_ordinal_head: true
+    ordinal_num_heads: 8  # cross-attention heads; ordinal thresholds are K-1
+    intervention_strength: 1.0
+    intervention_temperature: 2.0
+
+optimizer:
+  class_path: torch.optim.AdamW
+  init_args:
+    lr: 4e-5
+    weight_decay: 1e-4
+
+lr_scheduler:
+  class_path: torch.optim.lr_scheduler.CosineAnnealingWarmRestarts
+  init_args:
+    T_0: 10
+    T_mult: 2
+    eta_min: 1e-6
+
+trainer:
+  devices: [0]
+  max_epochs: 1000
+  log_every_n_steps: 1
+  precision: '32'
+  accumulate_grad_batches: 1
+  gradient_clip_val: 1.0
+  strategy:
+    class_path: lightning.pytorch.strategies.DDPStrategy
+    init_args:
+      find_unused_parameters: true
+  logger:
+    class_path: lightning.pytorch.loggers.TensorBoardLogger
+    init_args:
+      save_dir: log
+      name: mamba_dr_concept_intervention
+      version:
+      log_graph: false
+      default_hp_metric: false
+  callbacks:
+    - class_path: lightning.pytorch.callbacks.ModelCheckpoint
+      init_args:
+        monitor: val/kappa
+        mode: max
+        save_weights_only: false
+    - class_path: lightning.pytorch.callbacks.LearningRateMonitor
+      init_args:
+        logging_interval: epoch
+    - class_path: model.callbacks.MetricsCaculator
+      init_args:
+        verbose: true
+    - class_path: model.callbacks.GenHeatmap
+      init_args:
+        enabled: false

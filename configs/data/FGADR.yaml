@@ -1,0 +1,10 @@
+class_path: model.data.FundusDatamodule
+init_args:
+  dataset_name: FGADR
+  disease_names: ["No DR", "Mild", "Moderate", "Severe", "Proliferative"]
+  lesion_names: ["EX", "HE", "MA", "SE"] # 禁止改列表顺序
+  #["hard exudate", "hemorrhage", "microaneurysm", "soft exudate"]
+  kfold: 10
+  fold_num: 1
+  batch_size: 32
+  img_size: 384
