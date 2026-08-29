@@ -21,31 +21,15 @@ Mamba-DR is a clinically grounded concept-bottleneck framework for five-level di
 
 This project targets **Python 3.12.x**. A CUDA-capable GPU is recommended for training.
 
-```bash
-python -m venv .venv
-```
-
-Activate the environment:
-
-```bash
-# Linux / macOS
-source .venv/bin/activate
-
-# Windows PowerShell
-.venv\Scripts\Activate.ps1
-```
-
-Install PyTorch first. For a GPU build, use the command supplied by the [official PyTorch selector](https://pytorch.org/get-started/locally/) so that it matches your CUDA driver; the following is suitable for a CPU-only environment. Then install the remaining dependencies:
+Install the remaining dependencies:
 
 ```bash
 python -m pip install --upgrade pip
 pip install torch torchvision
 pip install lightning torchmetrics timm mamba-ssm einops \
     albumentations opencv-python pandas pillow numpy \
-    scikit-learn prettytable tensorboard transformers
+    scikit-learn prettytable tensorboard transformers mamba-ssm
 ```
-
-> `mamba-ssm` contains compiled components. If its installation fails, first verify that your PyTorch/CUDA combination and C++/CUDA build toolchain are supported by the version you are installing.
 
 ## Dataset Preparation
 
