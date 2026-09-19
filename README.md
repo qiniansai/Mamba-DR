@@ -2,7 +2,7 @@
 
 # Mamba-DR: A Clinically Grounded Mamba-Vision Concept Bottleneck for Interpretable and Correctable Diabetic Retinopathy Grading
 
-> **Work in progress.** The first version of our manuscript was submitted on **29 August 2026**. This repository is being prepared alongside the submission; code, instructions, and checkpoints may therefore change.
+> **Work in progress.** The first version of our manuscript was submitted on **07 September 2026**. This repository is being prepared alongside the submission; code, instructions, and checkpoints may therefore change.
 
 Mamba-DR is a clinically grounded concept-bottleneck framework for five-level diabetic retinopathy (DR) grading. It combines a hybrid MambaVision encoder with named lesion concepts—hard exudates (EX), hemorrhages (HE), microaneurysms (MA), and soft exudates (SE)—to provide interpretable lesion evidence and support targeted concept review and re-grading.
 
